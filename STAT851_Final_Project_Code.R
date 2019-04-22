@@ -275,8 +275,6 @@ legend(x = 1.35, y = 0.8, legend=c("Healthy", "Sprout", "Scab"), lty=c("solid","
 
 
 ## Fiber Example
-# Read in data
-
 
 # Match order given at DASL
 diet$fiber<-factor(x = diet$fiber, levels = c("none", "bran", "gum", "both"))
@@ -290,7 +288,6 @@ diet.table
 mod.fit.po<-vglm(formula = bloat ~ fiber, family = cumulative(parallel = TRUE),
                  weights = count, data = diet[diet$count != 0,])
 summary(mod.fit.po)
-#options(width = 65)  # Formatting for book - 60 characters per line
 slotNames(mod.fit.po)  # Like names( ) in S3
 mod.fit.po@coefficients
 options(width = 80)
